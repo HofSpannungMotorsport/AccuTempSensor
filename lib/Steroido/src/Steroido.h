@@ -4,6 +4,7 @@
 #include "Common/freeMemory.h"
 #include "Common/memCpy.h"
 #include "Common/memSet.h"
+#include "Common/mapC.h"
 
 
 // Include Arduino Hardware Drivers

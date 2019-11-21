@@ -3,10 +3,8 @@
 
 class DigitalIn : private NonCopyable<DigitalIn> {
     public:
-        DigitalIn(PinName pin, PinMode _pinMode)
+        DigitalIn(PinName pin, PinMode _pinMode = OpenDrain)
         : _pin(pin) {
-            pinMode(pin, INPUT);
-
             switch (_pinMode) {
                 case PullUp:
                     pinMode(pin, INPUT_PULLUP);

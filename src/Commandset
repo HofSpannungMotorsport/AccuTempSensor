@@ -1,0 +1,20 @@
+This File discribes the Commands for the Temp Sensor Boards. All Messages beginning with a C ar marked as Command
+
+Message-Layout:
+    1 char (byte) message Type ('C')
+    1 byte command Type
+    1 byte command Value (optional)
+    (other optional stuff)
+    1 byte command Type (inverted)
+    1 byte command Value (inverted) (optional)
+    (other optional stuff) (inverted)
+
+Commands:
+    0: Nothing
+    1: set Id on this device
+    2: set Id on this device, pass commant throu to the next Board
+    3: set Id on this device, then increment by one and send to the next Board
+    4: tell board Id
+    5: board Id response
+    6: reset
+    7: send reset to next device, then reset
