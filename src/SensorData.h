@@ -37,15 +37,15 @@ class SensorData {
             @param length The length of the message (should be constant)
             @return bool true if the Message was copyed, false if the given Message is invalid
         */
-        bool setByMessage(int8_t* message, uint16_t length) {
+        bool setByMessage(char* message, uint16_t length) {
             if (length != SENSOR_DATA_MESSAGE_LENGTH) return false;
             if (*message != 'D') return false; // Check Beginning
             if (message[SENSOR_DATA_MESSAGE_LENGTH - 1] != '\n') return false; // Check ending
 
             uint8_t currentBoardId = message[1];
-            uint8_t currentBoardIdInverted = message[1 + SENSOR_COUNT_PER_BOARD];
+            uint8_t currentBoardIdInverted = ~message[1 + SENSOR_COUNT_PER_BOARD];
             
-            if (currentBoardId != ~currentBoardIdInverted) return false;
+            if (currentBoardId != currentBoardIdInverted) return false;
 
             int8_t currentData[SENSOR_COUNT_PER_BOARD];
 

@@ -62,7 +62,7 @@ class TempSensor : NonCopyable<TempSensor> {
             // Get Temperature
             int8_t currentTemp = TEMP_ERROR_OTHER;
 
-            if (analogValue > tempConversion[0][0]) {
+            if (analogValue > (uint16_t)tempConversion[0][0]) {
                 currentTemp = SMALLEST_VALUE;
             } else {
                 uint8_t i = 0;
@@ -72,7 +72,7 @@ class TempSensor : NonCopyable<TempSensor> {
                         break;
                     }
                     
-                    if (analogValue < tempConversion[i][0] && analogValue > tempConversion[i + 1][0]) {
+                    if (analogValue < (uint16_t)tempConversion[i][0] && analogValue > (uint16_t)tempConversion[i + 1][0]) {
                         currentTemp = mapC<int16_t>(analogValue, tempConversion[i][0], tempConversion[i + 1][0], tempConversion[i][1], tempConversion[i + 1][1]);
                         break;
                     }

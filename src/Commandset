@@ -10,11 +10,18 @@ Message-Layout:
     (other optional stuff) (inverted)
 
 Commands:
-    0: Nothing
-    1: set Id on this device
-    2: set Id on this device, pass commant throu to the next Board
-    3: set Id on this device, then increment by one and send to the next Board
-    4: tell board Id
-    5: board Id response
-    6: reset
-    7: send reset to next device, then reset
+    0:  tell Software Version with Board ID and send it to the next device
+    
+    1:  set Id on this device
+    2:  set Id on this device, pass commant throu to the next Board
+    3:  set Id on this device, then increment by one and send to the next Board
+    4:  tell board Id
+    5:  board Id response
+    6:  reset
+    7:  send reset to next device, then reset
+    8:  set max temp (above, alive will shut down)
+    9:  set max temp and send it to the next device
+    10: set overheat flag disable temp
+    11: set overheat flag disable temp and send it to the next device
+
+    255: BoardID and Software Version reply (2 values)

@@ -64,7 +64,7 @@ class ITimer : private NonCopyable<ITimer> {
         bool _running;
         bool _stopped;
 
-        virtual inline unsigned long getMillis() = 0;
+        virtual unsigned long getMillis() = 0;
 };
 
 #endif // ITIMER_H

@@ -39,4 +39,7 @@
 #endif // MBED_H
 
 
+#include "Common/DelayedSwitch.h"
+
+
 #endif // STEROIDO_H
