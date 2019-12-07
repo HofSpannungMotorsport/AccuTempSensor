@@ -1,0 +1,3 @@
+[submodule "lib/Sterodio"]
+	path = lib/Sterodio
+	url = https://github.com/timoxd7/Steroido.git
